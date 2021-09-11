@@ -1,4 +1,17 @@
-const path = __dirname + "/datapacks/";
+import fs from "fs";
+import path from "path";
+
+const dpPath: string = path.join("C:", "JSDP-Temp", "datapacks");
+
+function init(): void {
+    let tempDp = path.join("C:", "JSDP-Temp");
+    if(!fs.existsSync(tempDp)) {
+        fs.mkdirSync(tempDp);
+        if(!fs.existsSync(dpPath)) fs.mkdirSync(dpPath);
+    }
+}
+
+init();
 
 var ColorCodes: any = {
     "&0": "black",
@@ -65,5 +78,5 @@ function toColor(text: any) {
 
 export {
     toColor,
-    path
+    dpPath as path
 }

@@ -2,7 +2,7 @@ import MCFunction from "./classes/MCFunction";
 import scoreboard from './classes/commands/Scoreboard';
 import datapack from './setup';
 
-export default {
+export {
     MCFunction,
     datapack,
     scoreboard

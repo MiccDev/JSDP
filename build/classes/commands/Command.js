@@ -25,6 +25,7 @@ var Command = /** @class */ (function (_super) {
         var _this = _super.call(this) || this;
         _this.commandName = commandName;
         _this.parent = null;
+        _this.generatedData += commandName + " ";
         return _this;
     }
     return Command;

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import archiver from 'archiver';
 import path from 'path';
-const datapacks = require('../../utils').path;
+const datapacks = require('../../utils').path + "/";
 
 function createMainFolder(name: string, description: string) {
     name = name.toLowerCase();
@@ -94,7 +94,7 @@ function save(name: string) {
     });
 
     archive.pipe(output);
-    archive.directory(__dirname + "/datapacks/" + name, false);
+    archive.directory(datapacks + name, false);
     archive.finalize();
 }
 

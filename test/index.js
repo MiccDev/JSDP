@@ -1,5 +1,4 @@
-const { MCFunction, scoreboard } = require("../src/index");
-const { datapack } = require("../src/index");
+const { MCFunction, scoreboard, datapack } = require("../build/index");
 
 MCFunction.create(() => {
     let score = scoreboard.objectives.add("Hello", "dummy", "&3Hello World &8Yes");

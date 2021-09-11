@@ -1,12 +1,4 @@
 import MCFunction from "./classes/MCFunction";
-declare const _default: {
-    MCFunction: typeof MCFunction;
-    datapack: import("./classes/Datapack").default;
-    scoreboard: {
-        objectives: {
-            add: (objective: string, criteria: string, displayName: string) => import("./classes/commands/Scoreboard").Scoreboard;
-            list: () => void;
-        };
-    };
-};
-export default _default;
+import scoreboard from './classes/commands/Scoreboard';
+import datapack from './setup';
+export { MCFunction, datapack, scoreboard };

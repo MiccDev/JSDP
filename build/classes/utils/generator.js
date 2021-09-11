@@ -6,7 +6,7 @@ exports.__esModule = true;
 var fs_1 = __importDefault(require("fs"));
 var archiver_1 = __importDefault(require("archiver"));
 var path_1 = __importDefault(require("path"));
-var datapacks = require('../../utils').path;
+var datapacks = require('../../utils').path + "/";
 function createMainFolder(name, description) {
     name = name.toLowerCase();
     if (exists(name)) {
@@ -74,7 +74,7 @@ function save(name) {
         throw err;
     });
     archive.pipe(output);
-    archive.directory(__dirname + "/datapacks/" + name, false);
+    archive.directory(datapacks + name, false);
     archive.finalize();
 }
 function saveTo(path, newPath) {

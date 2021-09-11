@@ -1,8 +1,22 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 exports.__esModule = true;
 exports.path = exports.toColor = void 0;
-var path = __dirname + "/datapacks/";
-exports.path = path;
+var fs_1 = __importDefault(require("fs"));
+var path_1 = __importDefault(require("path"));
+var dpPath = path_1["default"].join("C:", "JSDP-Temp", "datapacks");
+exports.path = dpPath;
+function init() {
+    var tempDp = path_1["default"].join("C:", "JSDP-Temp");
+    if (!fs_1["default"].existsSync(tempDp)) {
+        fs_1["default"].mkdirSync(tempDp);
+        if (!fs_1["default"].existsSync(dpPath))
+            fs_1["default"].mkdirSync(dpPath);
+    }
+}
+init();
 var ColorCodes = {
     "&0": "black",
     "&1": "dark_blue",

@@ -19,7 +19,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 exports.__esModule = true;
 exports.Scoreboard = void 0;
-var utils_1 = require("../../utils");
 var Command_1 = __importDefault(require("./Command"));
 var Scoreboard = /** @class */ (function (_super) {
     __extends(Scoreboard, _super);
@@ -29,18 +28,9 @@ var Scoreboard = /** @class */ (function (_super) {
         return _this;
     }
     Scoreboard.createScoreboard = function (objective, criteria, displayName) {
-        return null;
+        return new Scoreboard({});
     };
     Scoreboard.prototype.getGeneratedData = function () {
-        if (this.opts.add) {
-            var addOpts = this.opts;
-            var displayName = {};
-            if (addOpts.displayName)
-                displayName = utils_1.toColor(addOpts.displayName);
-            else
-                addOpts.displayName = addOpts.objective;
-            return "scoreboard objectives add " + addOpts.objective + " " + addOpts.criteria + " " + JSON.stringify(displayName.extra[0], null);
-        }
         return "";
     };
     return Scoreboard;
